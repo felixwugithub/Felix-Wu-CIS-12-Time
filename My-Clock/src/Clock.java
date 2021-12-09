@@ -1,22 +1,16 @@
-
 public class Clock {
     private int hour;
     private int minute;
     private int second;
 
     public Clock(int hour, int minute, int second) {
-
         if (hour < 24 && hour >= 0){
         this.hour = hour;}else{
             this.hour = 0;
-        }
-
-        if(minute < 60 && minute >= 0){
+        }if(minute < 60 && minute >= 0){
         this.minute = minute;}else{
             this.minute = 0;
-        }
-
-        if(second < 60 && second >= 0){
+        }if(second < 60 && second >= 0){
         this.second = second;}else{
             this.minute = 0;
         }
@@ -27,16 +21,14 @@ public class Clock {
         if(newHour < 24 && newHour >= 0){
             hour = newHour;
         }else{
-            hour = 0;
-        }
+            hour = 0;}
     }
 
     public void setMinute(int newMinute){
         if(newMinute < 60 && newMinute >= 0){
             minute = newMinute;
         }else{
-            minute = 0;
-        }
+            minute = 0;}
     }
 
     public void setSecond(int newSecond){
@@ -47,19 +39,9 @@ public class Clock {
         }
     }
 
-
-
-    public int getHour(){
-        return hour;
-    }
-
-    public int getMinute(){
-        return minute;
-    }
-
-    public int getSecond(){
-        return second;
-    }
+    public int getHour(){return hour;}
+    public int getMinute(){return minute;}
+    public int getSecond(){return second;}
 
     public Clock nextSecond(){
         second++;
@@ -76,7 +58,6 @@ public class Clock {
         }
         return this;
     }
-
     public Clock previousSecond(){
         second--;
         if(second < 0){
@@ -114,9 +95,5 @@ public class Clock {
 
         time = HOUR + ":" + MINUTE + ":" + SECOND;
         return time;
-
     }
-
-
-
 }
