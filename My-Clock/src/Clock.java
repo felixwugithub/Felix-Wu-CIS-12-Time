@@ -1,22 +1,53 @@
+
 public class Clock {
     private int hour;
     private int minute;
     private int second;
 
-
-    //ignores incorrect construction
     public Clock(int hour, int minute, int second) {
 
-        if (hour < 60){
-        this.hour = hour;}
+        if (hour < 24 && hour >= 0){
+        this.hour = hour;}else{
+            this.hour = 0;
+        }
 
-        if(minute < 60){
-        this.minute = minute;}
+        if(minute < 60 && minute >= 0){
+        this.minute = minute;}else{
+            this.minute = 0;
+        }
 
-        if(second < 60){
-        this.second = second;}
+        if(second < 60 && second >= 0){
+        this.second = second;}else{
+            this.minute = 0;
+        }
 
     }
+
+    public void setHour(int newHour){
+        if(newHour < 24 && newHour >= 0){
+            hour = newHour;
+        }else{
+            hour = 0;
+        }
+    }
+
+    public void setMinute(int newMinute){
+        if(newMinute < 60 && newMinute >= 0){
+            minute = newMinute;
+        }else{
+            minute = 0;
+        }
+    }
+
+    public void setSecond(int newSecond){
+        if(newSecond < 60 && newSecond >= 0){
+            second = newSecond;
+        }else{
+            second = 0;
+        }
+    }
+
+
 
     public int getHour(){
         return hour;
@@ -30,7 +61,7 @@ public class Clock {
         return second;
     }
 
-    public String nextSecond(){
+    public Clock nextSecond(){
         second++;
         if(second >= 60){
             minute++;
@@ -43,10 +74,10 @@ public class Clock {
                 }
             }
         }
-        return this.toString();
+        return this;
     }
 
-    public String previousSecond(){
+    public Clock previousSecond(){
         second--;
         if(second < 0){
             minute--;
@@ -59,7 +90,7 @@ public class Clock {
                 }
             }
         }
-        return this.toString();
+        return this;
     }
 
     public String toString(){
