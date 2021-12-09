@@ -30,7 +30,7 @@ public class Clock {
         return second;
     }
 
-    public void nextSecond(){
+    public String nextSecond(){
         second++;
         if(second >= 60){
             minute++;
@@ -43,9 +43,10 @@ public class Clock {
                 }
             }
         }
+        return this.toString();
     }
 
-    public void previousSecond(){
+    public String previousSecond(){
         second--;
         if(second < 0){
             minute--;
@@ -58,6 +59,7 @@ public class Clock {
                 }
             }
         }
+        return this.toString();
     }
 
     public String toString(){
