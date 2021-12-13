@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Clock myClock = new Clock(1111,23123123,-13);
+        Clock myClock = new Clock(24,60,60);
 
         //tests running the clock a whole day
         for (int i = 0; i < 86400; i++) {
