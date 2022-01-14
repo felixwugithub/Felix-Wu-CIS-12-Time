@@ -17,6 +17,11 @@ public class Clock {
 
     }
 
+    /*
+    Requires: int newHour where newHour < 24 && newHour >= 0
+    Modifies: hour
+    Purpose:  set the hour of the object to the specified int value
+     */
     public void setHour(int newHour){
         if(newHour < 24 && newHour >= 0){
             hour = newHour;
@@ -24,12 +29,24 @@ public class Clock {
             hour = 0;}
     }
 
+    /*
+   Requires: int newMinute where newMinute < 60 && newMinute >= 0
+   Modifies: minute
+   Purpose:  set the minute of the object to the specified int value
+    */
+    
     public void setMinute(int newMinute){
         if(newMinute < 60 && newMinute >= 0){
             minute = newMinute;
         }else{
             minute = 0;}
     }
+
+    /*
+ Requires: int newSecond where newSecond < 60 && newMinute >= 0
+ Modifies: second
+ Purpose:  set the second of the object to the specified int value
+  */
 
     public void setSecond(int newSecond){
         if(newSecond < 60 && newSecond >= 0){
@@ -43,6 +60,12 @@ public class Clock {
     public int getMinute(){return minute;}
     public int getSecond(){return second;}
 
+
+    /*
+    Requires:
+    Modifies: second, (minute & hour when necessary)
+    Purpose:  increments the clock one second to the future
+     */
     public Clock nextSecond(){
         second++;
         if(second >= 60){
@@ -58,6 +81,12 @@ public class Clock {
         }
         return this;
     }
+
+    /*
+    Requires:
+    Modifies: second, (minute & hour when necessary)
+    Purpose:  rewind the clock one second backwards
+     */
     public Clock previousSecond(){
         second--;
         if(second < 0){
@@ -74,6 +103,13 @@ public class Clock {
         return this;
     }
 
+
+    /*
+    Requires:
+    Modifies:
+    Purpose: Prints out the clock in proper HH:MM:SS format to console
+
+     */
     public String toString(){
         String time = "";
         String HOUR = "";

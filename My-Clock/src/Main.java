@@ -2,7 +2,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Clock myClock = new Clock(24,60,60);
+        //when invalid int values are put, they defult to zero
+        Clock myClock = new Clock(221312321,-3,0);
 
         //tests running the clock a whole day
         for (int i = 0; i < 86400; i++) {
